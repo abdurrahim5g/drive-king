@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<events>
+
+<event>
+        <logourl>img/ceremony_thumb.jpg</logourl>
+        <eventname>Mask Innovation Challenge Awards Ceremony</eventname>
+        <presenters>
+            <presenter>M2D2</presenter>
+        </presenters>
+        <dtstamp>Thurs, June 24, 2021, 12:30 PM - 1:30 PM EST</dtstamp>
+        <eventlocation>Online</eventlocation>
+        <eventresources>https://www.eventbrite.com/e/barda-mask-innovation-challenge-awards-ceremony-tickets-157715949651l</eventresources>
+    </event>
+   
+<event>
+        <logourl>img/fws_thumb.jpg</logourl>
+        <eventname>2021 Federal Wearables Summit</eventname>
+        <presenters>
+            <presenter>ASPR BARDA DRIVe</presenter>
+        </presenters>
+        <dtstamp>Wed, Aug 31, 2021, 10:00 AM - 3:30 PM EST</dtstamp>
+        <eventlocation>Online</eventlocation>
+        <eventresources>https://drive.hhs.gov/wearables_summit.html</eventresources>
+    </event>
+   
+    <!--
+<event>
+        <logourl>img/bid2021.jpg</logourl>
+        <eventname>BARDA Industry Day 2021</eventname>
+        <presenters>
+            <presenter>BARDA</presenter>
+        </presenters>
+        <dtstamp>Wed-Thu, Nov 3, 2021, 10:00 AM - 4:00 PM EST</dtstamp>
+        <eventlocation>Online</eventlocation>
+        <eventresources>https://www.medicalcountermeasures.gov/newsroom/2021/bid2021save/</eventresources>
+    </event>
+ -->
+
+<event>
+        <logourl>img/cloth_masks4.jpg</logourl>
+        <eventname>West Coast Regional Mask Challenge</eventname>
+        <presenters>
+            <presenter>Plug and Play, MedTech Innovator, and the Life Science Washington Institute</presenter>
+        </presenters>
+        <dtstamp>Tue, May 18, 2021, 1:00 PM - 2:30 PM EST</dtstamp>
+        <eventlocation>Online</eventlocation>
+        <eventresources>https://plugandplay.zoom.us/webinar/register/WN_5zDU8wvwRbKUOupX5M0UnQ</eventresources>
+    </event>
+
+<event>
+        <logourl>https://drive.hhs.gov/img/cloth_masks2.png</logourl>
+        <eventname>Midwest Regional Mask Challenge</eventname>
+        <presenters>
+            <presenter>Gener8tor, University Enterprise Labs, Purdue University, and University of Missouri</presenter>
+        </presenters>
+        <dtstamp>Wed, May 19, 2021, 3:00 PM - 4:30 PM EST</dtstamp>
+        <eventlocation>Online</eventlocation>
+        <eventresources>https://live.remo.co/e/barda-midwest-regional-mask-chal/register</eventresources>
+    </event>
+
+    <event>
+        <logourl>img/cloth_masks3.jpg</logourl>
+        <eventname>Southeast Regional Mask Challenge</eventname>
+        <presenters>
+            <presenter>First Flight Venture Center, New Orleans Bio Innovation Center, and Biolocity</presenter>
+        </presenters>
+        <dtstamp>Tue, May 25, 2021, 12:00 PM - 1:30 PM EST</dtstamp>
+        <eventlocation>Online</eventlocation>
+        <eventresources>https://zoom.us/webinar/register/WN_jR13GnSzQeK63prOW18LKg</eventresources>
+    </event>
+    
+        <event>
+        <logourl>img/cloth_masks4.jpg</logourl>
+        <eventname>Mid-Atlantic Regional Mask Challenge</eventname>
+        <presenters>
+            <presenter>Hosted by University City Science Center and Center for Biotechnology</presenter>
+        </presenters>
+        <dtstamp>Tue, May 26, 2021, 2:00 PM - 3:30 PM EST</dtstamp>
+        <eventlocation>Online</eventlocation>
+        <eventresources>https://venturecafeglobal-org.zoom.us/meeting/register/tJIvcOCvrzMiEtPblEbmB3cwezwMIleFe3xr</eventresources>
+    </event>
+    <event>
+        <logourl>https://drive.hhs.gov/img/invisible_health_thumb.png</logourl>
+        <eventname>The ‘Invisible’ Future of Health Monitoring</eventname>
+        <presenters>
+            <presenter>Kimberly Sciarretta, PhD </presenter>
+        </presenters>
+        <dtstamp>Tue, Feb 9, 2021, 11:00 AM - 12:30 PM EST</dtstamp>
+        <eventlocation>Online</eventlocation>
+        <eventresources>https://invisiblehealth.splashthat.com/</eventresources>
+    </event>
+    <event>
+        <logourl>https://drive.hhs.gov/img/Jlabs_webinar_2.23.png</logourl>
+        <eventname>Developing Alternative Administration Techniques for Therapeutics and Vaccines</eventname>
+        <presenters>
+            <presenter>This program is part of BLUE KNIGHT™, a collaboration between JLABS and BARDA</presenter>
+        </presenters>
+        <dtstamp>Tue, Feb 23, 2021, 11:00 AM - 12:30 PM EST</dtstamp>
+        <eventlocation>Online</eventlocation>
+        <eventresources>https://alternativeadministration.splashthat.com/</eventresources>
+    </event>
+    <event>
+        <logourl>https://drive.hhs.gov/img/cloth_masks2.png</logourl>
+        <eventname>WEBINAR ENACT EZ-BAA AREA OF INTEREST</eventname>
+        <presenters>
+            <presenter>Šeila Selimović, PhD.</presenter>
+        </presenters>
+        <dtstamp>Fri, Feb 26, 2021, 2:00 PM - 3:00 PM EST</dtstamp>
+        <eventlocation>Online</eventlocation>
+        <eventresources>https://hhs.webex.com/mw3300/mywebex/default.do?service=1&siteurl=hhs&nomenu=false&main_url=%2Fmc3300%2Fmeetingcenter%2Fdefault.do%3Fsiteurl%3Dhhs%26rnd%3D4346855964%26main_url%3D%252Fmc3300%252Fe.do%253Fsiteurl%253Dhhs%2526AT%253DMI%2526EventID%253D1183742662%2526UID%253D2232792%2526Host%253DQUhTSwAAAAIP0XI8UTSuXB6Gu8EZSlSVxp_pv9izj2wJmEYHwj6zj2WlBVJ8IXxXEUENISQ8ZFmH2SSVAlC7EvfWbkvf-axw0%2526RG%253D1%2526FrameSet%253D2%2526RGID%253Drd3d0c04a045c768d21a5d6dba7e3da17</eventresources>
+    </event>
+     
+<event>
+        <logourl>img/bid2020.jpg</logourl>
+        <eventname>BARDA Industry Day 2020 | DRIVe Panel Track 2 Session 3</eventname>
+        <presenters>
+            <presenter>BARDA</presenter>
+        </presenters>
+        <dtstamp>Tues, Oct 27, 2020, 10:00 AM - 4:00 PM EST</dtstamp>
+        <eventlocation>Online</eventlocation>
+        <eventresources>https://www.medicalcountermeasures.gov/barda/barda-industry-day-2020/bid-presentations/</eventresources>
+    </event>
+
+    <event>
+        <logourl>https://drive.hhs.gov/img/sciencelifesummit_logo.jpg</logourl>
+        <eventname>Center for Biotechnology Life Sciences Summit</eventname>
+        <presenters>
+            <presenter>Sandeep Patel, PhD. Biomedical Advanced Research and Development Authority, Division of Research, Innovation and Ventures</presenter>
+        </presenters>
+        <dtstamp>Fri, Mar 15, 2020, 3:30 - 4:00 PM EST</dtstamp>
+        <eventlocation>Online</eventlocation>
+        <eventresources>https://lifesciencessummit.org/</eventresources>
+    </event>
+</events>

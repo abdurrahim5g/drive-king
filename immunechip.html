@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta name="format-detection" content="telephone=no" />
+
+<link rel="icon" href="drive-icon.png" />
+<link rel="apple-touch-icon" href="img/drive-apple-icon.png" />
+
+<meta name="robots" content="index,follow" />
+
+<meta name="keywords" content="" />
+<meta name="description" content="DRIVe is transforming health security innovation to protect Americans from 21st century health security threats" />
+<meta name="author" content="Barda DRIVe" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@BARDA" />
+<meta name="twitter:title" content="ReDIRECT" />
+<meta name="twitter:description" content="A joint effort with Chemical Medical Countermeasures Branch to establish partnerships with innovators to repurpose commonly available therapeutics for rapid use in the event of exposure to chemical agents." />
+<meta name="twitter:image" content="https://drive.hhs.gov/img/twittercard_redirect.png" />
+<meta name="twitter:image:alt" content="Banner for DRIVe ReDIRECT" />
+
+<title>DRIVe</title>
+<!--	
+<meta http-equiv="Refresh" content="0; url=https://www.google.com">
+-->
+	
+<!-- Custom Fonts -->
+<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	
+<!-- Version 5.0 for checkmark -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+	 crossorigin="anonymous">
+
+<!-- Bootstrap Core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Custom CSS -->
+<link href="css/theme.css" rel="stylesheet">
+
+<link href="css/flipclock.css" rel="stylesheet">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+		<script src="/drivepubhtml/js/ie/html5shiv.js"></script>
+		<script src="/drivepubhtml/js/ie/respond.min.js"></script>
+	<![endif]-->
+<!-- D3.js 03/02/20 -->
+<script src="map/js/d3.v4.min.js"></script>
+<script src="map/js/d3-scale-chromatic.v1.min.js"></script>
+
+<!-- jQuery -->
+<script src="js/jquery-min.js"></script>
+
+<!-- Needed for tooltips -->
+<script src="js/popper.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="js/bootstrap.min.js"></script>
+
+<!-- ParaParse -->
+<script src="js/PapaParse-4.6.0/papaparse.min.js"></script>
+	
+<!-- Make portfolio -->
+<script src="js/makePortfolio.js"></script>
+
+<!-- FlipClock Counter -->
+<script src="js/flipclock.min.js"></script>
+	
+<!-- Flipclock -->
+	
+  <style>
+.flipcounter {
+	
+transform-origin: 0 0;
+transform: scale(.30);
+-ms-transform: scale(.30);
+-webkit-transform-origin: 0 0;
+-webkit-transform: scale(.80);
+-o-transform-origin: 0 0;
+-o-transform: scale(.30);
+-moz-transform-origin: 0 0;
+-moz-transform: scale(.70);
+margin-left: 60px;
+
+}
+
+	</style>
+    <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36251023-1']);
+  _gaq.push(['_setDomainName', 'jqueryscript.net']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+	
+	<link href="js/FlipClockCountdown/src/jquery.counter-analog.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="js/FlipClockCountdown/src/jquery.counter-analog2.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="js/FlipClockCountdown/src/jquery.counter-analog3.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="css/solvingsepsis.css" rel="stylesheet" type="text/css">
+    <script src="js/FlipClockCountdown/src/jquery.counter.js" type="text/javascript"></script>
+	
+<!-- Footer Include -->
+	<script> 
+    $(function(){
+      $("#includefooter").load("footer.html"); 
+    });
+    </script> 
+	
+	<!-- Header Include -->
+	<script> 
+    $(function(){
+      $("#includeheader").load("header.html"); 
+    });
+    </script> 
+	
+	<!-- Generate portfolio -->
+	<script>
+		$(function () {
+		var csvfile = "map/data/ProductList_20180913.csv";
+		// parseCSVToCallback(csvfile, makeGallery, "Sepsis");    // 03/02/20
+		parseCSVToCallbackUpdate();                               // 03/02/20
+		})
+	</script>
+	
+		<script>	
+		function makeCounter(startingValue, timeInterval, idOfHTML) {
+			var clock = $(idOfHTML).FlipClock(startingValue, {
+			clockFace: 'Counter'
+			});
+			var count = 0;
+			setTimeout(function() {
+				setInterval(function() {
+					clock.increment();
+				}, 
+				timeInterval);
+			});
+		};
+			
+		// 86400 seconds per day
+		const msPerDay = 86400 * 1000; // 60 * 60 * 24 = 86400
+		
+		const casesPerDay = 4658; // = 1.7M / 365 days
+		// const deathsPerDay = 740;
+		var msPerCase = msPerDay / casesPerDay;
+		// var msPerDeath = msPerDay / deathsPerDay;
+		
+		// Find out how many milliseconds have elapsed thus far this year (automatically updating for each year)
+		var msTotalThisYear = new Date() - new Date("1/1/" + (new Date()).getFullYear());
+			
+		// Once the page renders, start the counters
+		$(function() {
+			// Cases
+			makeCounter(Math.round(msTotalThisYear / msPerCase), msPerCase, "#counter-diagnoses");
+			// makeCounter(Math.round(msTotalThisYear / msPerDeath), msPerDeath, "#counter-deaths");
+		});
+	</script>
+	
+	
+	
+
+<script>
+	$(document).ready(function(){
+		$("[data-toggle='tooltip']").tooltip();
+	});
+</script>
+
+</head>
+
+<body id="page-top" class="index">
+    <!-- Google Tag Manager -->
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-122497508-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+    <!-- End Google Tag Manager -->
+
+    <!-- Navigation -->
+	<div id="includeheader"></div>
+    <!-- End Navigation -->
+	
+		<!-- Header -->
+	<header style="border-bottom: 1px solid #efefef; padding-bottom: 20px;" id="banner">
+		<div class="jumbotron services"
+			style="background-color: #FFFFFF;">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12 banner-text-container">
+						<div class="banner-text">
+							<div class=" green">
+								<div class="home-banner-heading">
+								  <h3 class="title" style="letter-spacing: 8px; color: #282828; font-size: 40px; text-transform: none">ImmuneChip+</h3>
+								  <br />
+</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+	
+	<section>
+			<div class="container">
+				<div class="row">
+					
+				<div  class="col-lg-8 text-left"><br>
+					<div>
+<h2 style="padding-left: 0px">About ImmuneChip+</h2>					
+<p>Tools that accelerate medical countermeasure screening and development are vital to improving human health – from enabling personalized medicine to responding to health security threats such as pandemics. To this end, BARDA, in partnership with the National Center for Advancing Translational Sciences (NCATS), part of the National Institutes of Health, has launched the new ImmuneChip+ program. We aim to partner with innovators to support the development of advanced microphysiological systems / tissue chip platforms that integrate a component of the human immune system. The objective of the program is to develop a set of mature ImmuneChips, combining a previously validated model of a vital human tissue (e.g. lung, heart, kidney) with an immune system component, in a single platform that can be machine-manufactured and that includes multiple in-line sensors for long-term tissue monitoring.  With this program, we aim to further enhance the usability of tissue chips and position them as useful tools in the drug development process and for personalized therapeutics. 
+</p>
+</div>
+					
+					</div>
+					<div style="margin: 0px;" class="col-lg-4 text-center">
+					  	<img style="padding-top: 50px;" alt="Immunechip Logo"  class="img-fluid" src="img/ImmuneChip_logo.jpg">
+					</div>
+
+			</div>
+		</div>
+		</section>
+
+	<br><br>
+
+    
+		<div style="-webkit-box-shadow: -1px 11px 15px -5px rgba(0,0,0,0.35); 
+box-shadow: -1px 11px 15px -5px rgba(0,0,0,0.35);" class="container">
+  <div class="row">
+   <div  class="col-12">
+      <ul class="nav nav-tabs ">
+        <li><a role="tab" class="active" href="#tab1" data-toggle="tab">Overview</a></li>
+        <li><a role="tab" href="#tab2" data-toggle="tab">FAQ</a></li>
+     <li><a role="tab" href="#tab3" data-toggle="tab">Webinars</a></li>
+	<!-- <li><a role="tab" href="#tab4" data-toggle="tab">Working Across Government</a></li>-->
+		<!--  <li><a role="tab" href="#tab5" data-toggle="tab">BtN is Personal</a></li>-->
+      </ul>
+      <div class="tab-content ">
+          <div role="tabpanel" class="tab-pane active" id="tab1">
+		  <div class="row">  
+			  <div class="col-sm-12 text-center">
+			    <h3>Overview</h3>
+			    <hr />
+		<br>
+	</div>
+  </div>
+	<div class="row text-left"> 
+		<div style="padding-bottom: 30px;" class="col-sm-10 mx-auto">
+	<p>Accurately modeling human tissues and disease in vitro is a key step to accelerating the pace of drug discovery and development, a capability critical to effectively responding to pandemics, in which every day counts. Rapid advances in tissue chip technologies now make the prospect of commercialization more realistic. However, key challenges remain, including manufacturability, use of medically relevant sensors, and the integration of multiple tissue types anchored by the immune system. We aim to support the development of advanced microphysiological systems (MPS) that monitor and replicate components of vital human tissues, including immune system functions and their interactions. 
+		<p>We expect that the use of these advanced MPS will result in unprecedented opportunities for addressing mechanistic questions of health and disease, as well as assessing biomedical interventions. Moving towards a comprehensive “body-on-a-chip” approach, these MPS will serve as a predictive tool in the drug development process and enable the development of precision medicine-based therapies.</p>
+	</p>
+		<p>The focus of ImmuneChip+ is on engineering 3-D in vitro human microphysiological tissues (e.g. lung, liver, gut, heart tissue, or others) and immune system tissues on a single platform, while adding in-line sensors for continuous tissue monitoring and utilizing platform materials suitable for automated manufacturing. We are specifically interested in adding immune system responsiveness to an existing, validated in vitro human tissue model (e.g. lung, liver, gut, heart, or others) and/or model infection with a viral, bacterial, or fungal pathogen, while demonstrating continuous monitoring of the tissues and capability for automated manufacturing of the platform. 
+		 </p>
+
+
+		</div>
+			
+        </div>
+		  </div>
+        <div role="tabpanel" class="tab-pane" id="tab2">
+		<div class="container">
+	 
+			<div class="row">  
+			  <div class="col-sm-12 text-center">
+			    <h3>FAQ</h3>
+			    <hr />
+				  
+				  
+<br>
+				  <div class="text-left">
+<!--FAQ-->
+<div class="container-fluid bg-gray" id="accordion-style-2">
+	<div class="container">
+		<section>
+			<div class="row">
+				<div class="col-12">
+				 
+				<div class="col-11 mx-auto">
+					<div class="accordion" id="accordionExample2">
+						<div class="card">
+							<div class="card-header" id="headingOneCollapse2">
+								<h5 class="mb-0">
+							<button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOneCollapse2" aria-expanded="true" aria-controls="collapseOneCollapse2"><em class="fa fa-plus main"></em>Is the ImmuneChip+ program open to academics or do only companies qualify?</button>
+						  </h5>
+							</div>
+
+							<div id="collapseOneCollapse2" class="collapse show fade" aria-labelledby="headingOneCollapse2" data-parent="#accordionExample2">
+								<div class="card-body">
+									<p>It is open to both academia and industries as long as the respondents meet all the requirements described in EZ-BAA.</p>
+								</div>
+							</div>
+						</div>
+						<div class="card">
+							<div class="card-header" id="headingTwoCollapse2">
+								<h5 class="mb-0">
+							<button class="btn btn-link collapsed btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseTwoCollapse2" aria-expanded="false" aria-controls="collapseTwoCollapse2"><em class="fa fa-plus main"></em>Can large companies apply to the ImmuneChip+ program?</button>
+						  </h5>
+							</div>
+							<div id="collapseTwoCollapse2" class="collapse fade" aria-labelledby="headingTwoCollapse2" data-parent="#accordionExample2">
+								<div class="card-body">
+									<p>Any entity can submit to ImmuneChip+ via the EZ-BAA portal as long as they are registered with <a target="_blank" href="https://www.sam.gov/SAM/">www.SAM.gov</a>.
+</p>
+								</div>
+							</div>
+						</div>
+						<div class="card">
+							<div class="card-header" id="headingThreeCollapse2">
+								<h5 class="mb-0">
+							<button class="btn btn-link collapsed btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseThreeCollapse2" aria-expanded="false" aria-controls="collapseThreeCollapse2">
+							  <i class="fa fa-plus main"></i>Can companies/universities outside of the United States apply for Immunechip+ funding?
+							</button>
+						  </h5>
+							</div>
+							<div id="collapseThreeCollapse2" class="collapse fade" aria-labelledby="headingThreeCollapse2" data-parent="#accordionExample2">
+								<div class="card-body"> <p>Yes. Applicants from outside of the United States are eligible to apply for funding. Please note though that U.S.-based manufacturing of the proposed solution device/diagnostic will be prioritized.</p></div>
+							</div>
+						</div>
+						<div class="card">
+							<div class="card-header" id="headingFourCollapse2">
+								<h5 class="mb-0">
+							<a href="#" class="btn btn-link collapsed btn-block text-left"  data-toggle="collapse" data-target="#collapseFourCollapse2" aria-expanded="false" aria-controls="collapseFourCollapse2">
+							  <i class="fa fa-plus main"></i>Do academic institutions also need to provide a 30% cost share?
+									</a>
+						  </h5>
+							
+							</div>
+							<div id="collapseFourCollapse2" class="collapse fade" aria-labelledby="headingFour" data-parent="#accordionExample2">
+								<div class="card-body">
+									<p>Yes. Abstract submissions should include a cost-share that is within our target range of 30-50% minimum unless you satisfy the regulatory exception described (included below for reference). Currently, none of the awardees under the DRIVe EZ-BAA have been awarded a contract that does not include a cost-share component below range, including all universities and non-profit organizations. Cost-share may be in-kind or cash contributions. It may also come from a third-party investor/sponsor; however, it is up to you to ensure you receive their contribution toward the proposed project. Many organizations offer to cover Overhead or Fringe Benefits. Some also offer pro-bono labor hours or sponsored equipment, materials, or subcontractor costs. A combination of all of the above could be acceptable. It would need to be indicated on a submission what is being cost-shared. To qualify for no cost-share under an EZ-BAA award, a respondent must show that there is "no probability that the respondent will receive present or future benefits from participation as described in Federal Acquisition Regulation (FAR) 16.303." Examples of present or future benefits include increased technical know-how, training for employees, acquisition of goods or services, development of a commercially viable product that can be sold in the commercial market, and use of background knowledge in future contracts.
+</p>
+								</div>
+							</div>
+						</div>
+								<div class="card">
+							<div class="card-header" id="headingFiveCollapse2">
+								<h5 class="mb-0">
+							<button class="btn btn-link collapsed btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseSixCollapse2" aria-expanded="false" aria-controls="collapseSixCollapse2">
+							  <i class="fa fa-plus main"></i>What are the data-sharing requirements of the Immunechip+ program?
+									</button>
+						  </h5>
+							
+							</div>
+							<div id="collapseSixCollapse2" class="collapse fade" aria-labelledby="headingSix" data-parent="#accordionExample2">
+								<div class="card-body">
+									<p>ImmuneChip-funded projects have data sharing requirements with the U.S. government consistent with government regulation (FAR 52.227-14 Rights in Data). ImmuneChip+ program requires that you share all data (including raw data) generated under the project for government’s use consistent with the regulation.</p>
+								</div>
+							</div>
+						</div>
+						<div class="card">
+							<div class="card-header" id="headingSevenCollapse2">
+							  <h5 class="mb-0"> <a href="#" class="btn btn-link collapsed btn-block text-left" data-toggle="collapse" data-target="#collapseSevenCollapse2" aria-expanded="false" aria-controls="collapseSevenCollapse2"> <em class="fa fa-plus main"></em>What state of technology development does the Immunechip+ program consider?</a> </h5>
+							</div>
+							<div id="collapseSevenCollapse2" class="collapse fade" aria-labelledby="headingSevenCollapse2" data-parent="#accordionExample2">
+								<div class="card-body">
+									<p>The ImmuneChip+ program requires that all applicants already have a mature, validated tissue chip.
+</p>
+								</div>
+							</div>
+						</div>
+							<div class="card">
+							<div class="card-header" id="headingEightCollapse2">
+							  <h5 class="mb-0"> <a href="#" class="btn btn-link collapsed btn-block text-left" data-toggle="collapse" data-target="#collapseEightCCollapse2" aria-expanded="false" aria-controls="collapseEightCCollapse2"> <em class="fa fa-plus main"></em>Can you submit more than once and on multiple tissue areas?</a> </h5>
+							</div>
+							<div id="collapseEightCCollapse2" class="collapse fade" aria-labelledby="headingEightCCollapse2" data-parent="#accordionExample2">
+								<div class="card-body">
+									<p>Yes, potential partners are free to submit more than one abstract so long as those projects are discrete, stand-alone projects, and all application requirements are met.</p>
+								</div>
+							</div>
+						</div>
+							<div class="card">
+							<div class="card-header" id="headingNineCollapse2">
+							  <h5 class="mb-0"> <a href="#" class="btn btn-link collapsed btn-block text-left" data-toggle="collapse" data-target="#collapseNineCollapse2" aria-expanded="false" aria-controls="collapseNineCollapse2"> <em class="fa fa-plus main"></em>The EZ-BAA application is so short. Can I include links to figures or references?</a> </h5>
+							</div>
+							<div id="collapseNineCollapse2" class="collapse fade" aria-labelledby="headingNineCollapse2" data-parent="#accordionExample2">
+								<div class="card-body">
+									<p>While you can include links to figures or references, it is not mandated that reviewers view that outside information. At this time, the abstract format does not accept any figures, only text. All applicants are required to request a market research call prior to submitting an application. </p>
+								</div>
+							</div>
+						</div>
+						
+						
+					</div>
+				</div>	
+			</div>
+		</section>
+	</div>
+</div><br><br>
+<!--End FAQ-->
+</div>
+	</div>
+  </div>     
+       </div>
+      </div>
+      <div role="tabpanel" class="tab-pane" id="tab3">
+		<div class="row text-center">  
+			<div class="col-sm-12 justify-content-center">
+			  <h3>Webinars</h3>
+			  <hr />
+	  <br>
+  
+
+
+
+<div class="col-5 mx-auto" >
+	<h5>Please check back for future webinars</h5><br>
+	</div> 	
+		<!--
+	<div class="row">
+		<div class="col-lg-3">
+		<img style="min-width: 200px" alt="Seila Headshot" class="img-fluid" src="img/seila_headshot_forest.png"><b></b>	</div>
+		<div  class="col-lg-8">
+		  <h3 style="text-transform: none;">Webinar 3: ImmuneChip+: New Program Overview</h3>
+			  <p>Friday, May 7th, 2021 
+		11 AM - 12:00 PM  Eastern Time (US & Canada)
+		</p>
+		<p>You will receive the call-in information shortly before the meeting.
+		</p>
+		<p>Speaker: <a href="seila_selimovic.html" target="_blank">Dr. Seila Selimovic</a></p>	
+		  <br>
+		  <div><a style="padding: 10px" class="btn-info" target="_blank" href="https://hhs.webex.com/webappng/sites/hhs/meeting/info/0cff7592a47941dc97a2915e6a7e79dc?isPopupRegisterView=true">Register for Event</a></div>	<br>	  
+		  </div>
+		   
+		</div>-->
+	</div>
+			<br>
+		</div>
+</div>	
+			</div>
+       </div>	  
+      </div>
+    </div>
+
+</div>
+	<br /><br />
+
+
+	<!--   END: TAB CONTENT -->
+	
+	
+	<br /><br />
+	<div class="container">
+	<div style="text-align: center">For more information, please contact us at <a href="mailto:ImmuneChipBARDA@hhs.gov">ImmuneChipBARDA@hhs.gov</a></div><br>
+		<!--<div style="text-align: center">Submit your <a target="_blank" href="https://beta.sam.gov/opp/f421de20343e4cb28212a7c067898435/view">EZ BAA Abstract</a></div><br> -->
+    </div>
+
+<!-- Footer -->
+ <div id="includefooter"></div>
+<!-- Footer --------->
+	
+
+	<!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+	<div id="scroll-top-link"
+		class="scroll-top page-scroll visible-xs visible-sm">
+		<a class="btn btn-primary" href="#page-top"> <i
+			class="fa fa-chevron-up"></i>
+		</a>
+	</div>
+</body>
+
+</html>
+

@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta name="format-detection" content="telephone=no" />
+
+<link rel="icon" href="drive-icon.png" />
+<link rel="apple-touch-icon" href="img/drive-apple-icon.png" />
+
+<meta name="robots" content="index,follow" />
+
+<meta name="keywords" content="" />
+<meta name="description" content="DRIVe is transforming health security innovation to protect Americans from 21st century health security threats" />
+<meta name="author" content="Barda DRIVe" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@BARDA" />
+<meta name="twitter:title" content="Solving Sepsis" />
+<meta name="twitter:description" content="Someone you know will be impacted by sepsis. Learn how we’re solving sepsis together." />
+<meta name="twitter:image" content="https://drive.hhs.gov/img/twitter_card_solvingsepsis.png" />
+<meta name="twitter:image:alt" content="Banner for DRIVe Solving Sepsis" />
+
+<title>DRIVe</title>
+<!--	
+<meta http-equiv="Refresh" content="0; url=https://www.google.com">
+-->
+	
+<!-- Custom Fonts -->
+<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	
+<!-- Version 5.0 for checkmark -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+	 crossorigin="anonymous">
+
+<!-- Bootstrap Core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Custom CSS -->
+<link href="css/theme.css" rel="stylesheet">
+
+
+<link href="css/flipclock.css" rel="stylesheet">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+		<script src="/drivepubhtml/js/ie/html5shiv.js"></script>
+		<script src="/drivepubhtml/js/ie/respond.min.js"></script>
+	<![endif]-->
+<!-- D3.js 03/02/20 -->
+<script src="map/js/d3.v4.min.js"></script>
+<script src="map/js/d3-scale-chromatic.v1.min.js"></script>
+
+<!-- jQuery -->
+<script src="js/jquery-min.js"></script>
+
+<!-- Needed for tooltips -->
+<script src="js/popper.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="js/bootstrap.min.js"></script>
+
+<!-- ParaParse -->
+<script src="js/PapaParse-4.6.0/papaparse.min.js"></script>
+	
+<!-- Make portfolio -->
+<script src="js/makePortfolio.js"></script>
+
+<!-- FlipClock Counter -->
+<script src="js/flipclock.min.js"></script>
+	
+<!-- Flipclock -->
+	
+  <style>
+.flipcounter {
+	
+transform-origin: 0 0;
+transform: scale(.30);
+-ms-transform: scale(.30);
+-webkit-transform-origin: 0 0;
+-webkit-transform: scale(.80);
+-o-transform-origin: 0 0;
+-o-transform: scale(.30);
+-moz-transform-origin: 0 0;
+-moz-transform: scale(.70);
+margin-left: 60px;
+
+}
+
+
+
+.card-body {
+  padding: 1.5rem;
+}
+
+ul li  {
+  list-style: none;
+}
+
+	</style>
+    <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36251023-1']);
+  _gaq.push(['_setDomainName', 'jqueryscript.net']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+	
+	<link href="js/FlipClockCountdown/src/jquery.counter-analog.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="js/FlipClockCountdown/src/jquery.counter-analog2.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="js/FlipClockCountdown/src/jquery.counter-analog3.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="css/solvingsepsis.css" rel="stylesheet" type="text/css">
+    <script src="js/FlipClockCountdown/src/jquery.counter.js" type="text/javascript"></script>
+	
+<!-- Footer Include -->
+	<script> 
+    $(function(){
+      $("#includefooter").load("footer.html"); 
+    });
+    </script> 
+	
+	<!-- Header Include -->
+	<script> 
+    $(function(){
+      $("#includeheader").load("header.html"); 
+    });
+    </script> 
+	
+<!-- Generate portfolio -->
+    <script>
+        $(function () {
+        var csvfile = "map/data/ProductList_20180913.csv";
+        parseCSVToCallbackUpdate(csvfile, "Sepsis");                               // 03/02/20
+        })
+    </script>
+	
+		<script>	
+		function makeCounter(startingValue, timeInterval, idOfHTML) {
+			var clock = $(idOfHTML).FlipClock(startingValue, {
+			clockFace: 'Counter'
+			});
+			var count = 0;
+			setTimeout(function() {
+				setInterval(function() {
+					clock.increment();
+				}, 
+				timeInterval);
+			});
+		};
+			
+		// 86400 seconds per day
+		const msPerDay = 86400 * 1000; // 60 * 60 * 24 = 86400
+		
+		const casesPerDay = 4658; // = 1.7M / 365 days
+		// const deathsPerDay = 740;
+		var msPerCase = msPerDay / casesPerDay;
+		// var msPerDeath = msPerDay / deathsPerDay;
+		
+		// Find out how many milliseconds have elapsed thus far this year (automatically updating for each year)
+		var msTotalThisYear = new Date() - new Date("1/1/" + (new Date()).getFullYear());
+			
+		// Once the page renders, start the counters
+		$(function() {
+			// Cases
+			makeCounter(Math.round(msTotalThisYear / msPerCase), msPerCase, "#counter-diagnoses");
+			// makeCounter(Math.round(msTotalThisYear / msPerDeath), msPerDeath, "#counter-deaths");
+		});
+	</script>
+	
+
+	
+
+<script>
+	$(document).ready(function(){
+		$("[data-toggle='tooltip']").tooltip();
+	});
+</script>
+
+</head>
+
+<body id="page-top" class="index">
+    <!-- Google Tag Manager -->
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-122497508-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+    <!-- End Google Tag Manager -->
+
+    <!-- Navigation -->
+	<div id="includeheader"></div>
+    <!-- End Navigation -->
+	<br><br><br><br><br><br><br><hr />
+    <section style="background-color: #fff
+    ;">
+      <div class="container" data-aos="fade-up">
+        <div class="row justify-content-center text-center section-intro">
+          <div class="col-12 col-md-10 col-lg-9">
+            <span class="title-decorative" data-aos="fade-up" data-aos-delay="10"><br>DRIVe Areas of Interest</span>
+            <h2 class="display-4" data-aos="fade-up" data-aos-delay="100">Introducing DRIVe's <br>Solving Sepsis Program</h2>
+            <span class="lead" data-aos="fade-up" data-aos-delay="200">
+              The Solving Sepsis program is addressing the entire continuum of care of a sepsis patient – from early pre-hospital interactions with healthcare providers, through hospital care and discharge – seeking innovative interventions at each step to identify sepsis early, address clinical management in order to improve patient outcomes and decrease mortality. </span>
+<br><br><br><img style="max-height: 250px;"  class="img-fluid" src="img/solving_sepsis_together.png">
+          </div>
+          <!--end of col-->
+        </div>
+        <!--end of row-->
+
+     
+        <!--end of row-->
+      
+        <!--end of row-->
+      </div>
+      <!--end of container-->
+    </section>
+    <!--end of section-->
+		<br><br>
+    <section>
+      <div style="background-color: #f8f9fa;"  class="container-fluid" data-aos="fade-up">
+
+        <div class="row justify-content-center text-center section-intro">
+          <div class="col-12 col-md-9 col-lg-8"><br><br>
+            <h2 class="display-4" data-aos="fade-up" data-aos-delay="100">About Solving Sepsis</h2>
+            <span class="lead" data-aos="fade-up" data-aos-delay="200">Find out more about DRIVe's Solving Sepsis Program below</span>
+<br><br><br><br>
+          </div>
+          <!--end of col-->
+        </div>
+        <!--end of row-->
+
+        <div class="row justify-content-around">
+
+          <div class="col-md-5 col-7 mb-4">
+            <div class="tab-content">
+              <div class="tab-pane fade show active" id="content-1" role="tabpanel">
+                <h2>What is Sepsis?</h2> 
+                <p>A potentially life-threatening medical
+                  emergency, sepsis is the body’s
+                  extreme response to an infection. All
+                  roads can lead to sepsis. It can arise
+                  from any infection that triggers a chain
+                  reaction throughout the body. To be
+                  prepared against health security
+                  threats, we need to address sepsis
+                  directly. Without timely treatment,
+                  sepsis can rapidly lead to tissue
+                  damage, organ failure, and even
+                  death.</p>
+                  <p> At least 1.7 million adults in the U.S.
+                  develop sepsis each year. That’s more
+                  than the number of people who have
+                  heart attacks and strokes combined.</p>
+              </div>
+              <div class="tab-pane fade" id="content-2" role="tabpanel">
+                <h2>What is Our Strategy</h2> 
+                <img alt="sepsis strategy" class="img-fluid w-100" src="img/SepsisVisionPic.png" /><br>
+                <p><br>The Solving Sepsis program is addressing the entire continuum of care of a sepsis patient – from early pre-hospital interactions with healthcare providers, through hospital care and discharge – seeking innovative interventions at each step to identify sepsis early, address clinical management in order to improve patient outcomes and decrease mortality. </p>
+              </div>
+              <div class="tab-pane fade" id="content-3" role="tabpanel">
+                <h2>What is Solving Sepsis Doing</h2> 
+               <p>The Solving Sepsis Program is
+                committed to a multi-pronged approach
+                to combat sepsis.</p>
+                <p>Greater than 80% of patients that develop
+                sepsis acquire it in the community. For
+                every hour appropriate treatment is
+                delayed, the likelihood of death increases.
+                To ensure everyone gets the right care
+                at the right time, we are addressing the
+                entire continuum of care of a sepsis
+                patient — from early pre-hospital
+                interactions with healthcare providers,
+                through hospital care and discharge –
+                seeking innovative interventions at each
+                step to reduce sepsis mortality.</p>
+              </div>
+            </div>
+          </div>
+          <!--end of col-->
+          <div class="col-lg-5 col-md-8 mb-4">
+            <ul class="nav nav-cards" role="tablist">
+              <li>
+                <a class="card active" data-toggle="tab" href="#content-1" role="tab" aria-controls="content-1" aria-selected="true">
+                  <div class="card-body">
+                    <div class="media align-items-center">
+                      <div class="step-circle mr-4">1</div>
+                      <div class="media-body">
+                        <h5>What is Sepsis</h5>
+                        <span>
+                          It’s even easier than it sounds, you just need an email address
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a class="card" data-toggle="tab" href="#content-2" role="tab" aria-controls="content-2" aria-selected="false">
+                  <div class="card-body">
+                    <div class="media align-items-center">
+                      <div class="step-circle mr-4">2</div>
+                      <div class="media-body">
+                        <h5>Solving Sepsis Strategy</h5>
+                        <span>
+                         Learn more about how we are assisting in the fight against sepsis.
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a class="card" data-toggle="tab" href="#content-3" role="tab" aria-controls="content-3" aria-selected="false">
+                  <div class="card-body">
+                    <div class="media align-items-center">
+                      <div class="step-circle mr-4">3</div>
+                      <div class="media-body">
+                        <h5>What is Solving Sepsis Doing?</h5>
+                        <span>
+                          That was easy, right? Now it’s time to deploy that badboy and let the world know
+                        </span>
+                        
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </li>
+            </ul>
+            <br><br>
+          </div>
+          <!--end of col-->
+
+        </div>
+        <!--end of row-->
+      </div>
+      <!--end of container-->
+    </section>
+    <!--end of section-->
+   
+
+    <section class="bg-white fullwidth-split">
+      <div style="padding-right: 0px; padding-left: 0px;" class="container-fluid">
+        <div class="row no-gutters">
+          <div class="col-12 col-sm-5 col-lg-6 order-sm-2 fullwidth-split-image">
+            <img alt="Image" src="img/hospital_iv.jpeg" class="bg-image" />
+          </div>
+          <!--end of col-->
+          <div class="col-12 col-sm-7 col-lg-6 order-sm-1 fullwidth-split-text">
+            <div class="col-12 col-sm-8">
+              <h2 style="font-size: 25px;"  data-aos="fade-up">Did you know that each year?</h2>
+              
+      
+              <ul class="feature-list feature-list-sm">
+                <li>
+                  <div class="media" data-aos="fade-up">
+                    <i class="fas fa-check"></i>
+                    <div class="media-body">
+                    
+                      <p style="list-style:none;">
+                        More than 1.7 million people in the U.S develop sepsis 
+                      </p>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="media" data-aos="fade-up">
+                    <i class="fas fa-check"></i>
+                    <div class="media-body">
+                  
+                      <p>
+                        Nearly 270,000 adult Americans die as a result of sepsis 
+                      </p>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="media" data-aos="fade-up">
+                    <i class="fas fa-check">  </i>
+                    <div class="media-body">
+                  
+                      <p>
+                      More than $62 billion is spent on sepsis healthcare costs
+                      </p>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="media" data-aos="fade-up">
+                    <i class="fas fa-check"></i>
+                    <div class="media-body">
+                  
+                      <p>
+                         1 out of 3 patients
+                        who die in the hospital
+                        have sepsis
+                      </p>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="media" data-aos="fade-up">
+                    <i class="fas fa-check">  </i>
+                    <div class="media-body">
+                  
+                      <p>
+                       86.8% of sepsis
+                        cases were present
+                        on admission to the
+                        hospital
+                      </p>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+              <div class="citation"><sup>1</sup> <a href="https://www.cdc.gov/sepsis/" target="_blank">https://www.cdc.gov/sepsis/</a><br></div>
+              <p style="font-size: 11.5px" class="citation"><sup>2</sup>  <a href="https://journals.lww.com/ccmjournal/Fulltext/2020/03000/Sepsis_Among_Medicare_Beneficiaries__3__The.4.aspx" target="_blank">Buchman TG, Simpson SQ, Sciarretta KL, et al: Sepsis Among Medicare Beneficiaries: 3. The Methods, Models, and Forecasts of Sepsis, 2012-2018. Crit Care Med 2020; 48:302-318</a></p>
+            </div>
+          </div>
+          <!--end of col-->
+        </div>
+        <!--end of row-->
+      </div>
+      <!--end of container-->
+    </section>
+    <!--end of section-->
+
+    <section class="bg-white fullwidth-split">
+      <div style="padding-right: 0px; padding-left: 0px;" class="container-fluid">
+        <div class="row no-gutters">
+          <div class="col-12 col-sm-5 col-lg-6 fullwidth-split-image">
+            <img alt="sepsis cells" src="img/sepsis_cells.jpeg" class="bg-image" />
+          </div>
+          <!--end of col-->
+          <div class="col-12 col-sm-7 col-lg-6 fullwidth-split-text">
+            <div class="col-12 col-sm-8">
+              <h3 class="h1" data-aos="fade-up">Working Across the Government</h3>
+              <span class="lead">You or someone you care about
+                will likely get sepsis in your
+                lifetime.</span>
+              <hr class="short" />
+              <p>A potentially life-threatening medical
+                emergency, sepsis is the body’s
+                extreme response to an infection. All
+                roads can lead to sepsis. It can arise
+                from any infection that triggers a chain
+                reaction throughout the body. To be
+                prepared against health security
+                threats, we need to address sepsis
+                directly. Without timely treatment,
+                sepsis can rapidly lead to tissue
+                damage, organ failure, and even
+                death.</p>
+                <p>At least 1.7 million adults in the U.S.
+                develop sepsis each year. That’s more
+                than the number of people who have
+                heart attacks and strokes combined.</p>
+              <a href="map/index.html" class="text-small" data-aos="fade-up">See our portfolio of partners &rsaquo;</a>
+            </div>
+          </div>
+          <!--end of col-->
+        </div>
+        <!--end of row-->
+      </div>
+      <!--end of container-->
+    </section>
+    <!--end of section-->
+
+
+    <section class="bg-white fullwidth-split">
+      <div style="padding-right: 0px; padding-left: 0px;" class="container-fluid">
+        <div class="row no-gutters">
+          <div class="col-12 col-sm-5 col-lg-6 order-sm-2 fullwidth-split-image">
+            <img alt="Image" src="img/sepsis_molecules.jpg" class="bg-image" />
+          </div>
+          <!--end of col-->
+          <div class="col-12 col-sm-7 col-lg-6 order-sm-1 fullwidth-split-text">
+            <div class="col-12 col-sm-8">
+              <h3 class="h1" data-aos="fade-up">Sepsis Is Personal</h3>
+              <hr class="short" /><br>
+              <h5>Read the story of Solving Sepsis’ Dr. Tim Buchman and his encounter with sepsis</h5>
+              <a href="#" class="text-small" data-aos="fade-up">Finish reading &rsaquo;</a>
+<hr /><br>
+              <h5>From providing care to becoming a patient: A Level One Trauma center nurse’s experience with COVID-19 and Sepsis</h5>
+              <a href="#" class="text-small" data-aos="fade-up">Finish reading &rsaquo;</a>
+              <hr /><br>
+              <h5>My harrowing experience as a Covid-19 Patient
+              </h5>
+              <a href="#" class="text-small" data-aos="fade-up">Finish reading &rsaquo;</a>
+
+            </div>
+          </div>
+          <!--end of col-->
+        </div>
+        <!--end of row-->
+      </div>
+      <!--end of container-->
+    </section>
+    <!--end of section-->
+	
+    <section style="background-image: url('img/social_bg.jpg');" class="bg-dark space-lg">
+      <img alt="Image" src="assets/img/graphic-bg-clouds-2.png" class="bg-image" />
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-12 col-lg-11">
+            <div class="media text-center">
+             <!-- <img alt="Image" src="assets/img/avatar-male-3.jpg" class="avatar avatar-lg" />-->
+              <div class="media-body">
+              <br><br>
+                <p style="color: #fff; padding: 60px" class="h2">
+                  Share your sepsis story<brf>
+                  Use #solvingsepsistogether @BARDA to join our mission and share your experience with sepsis.
+                  
+                </p>
+                <br><br>
+              </div>
+            </div>
+          </div>
+          <!--end of col-->
+        </div>
+        <!--end of row-->
+      </div>
+      <!--end of container-->
+    </section>
+    <!--end of section-->
+
+
+    <section class="bg-white">
+      <div class="container ">
+        <div class="row justify-content-center text-center section-intro">
+          <div class="col-12 col-md-10 col-lg-10"><br>
+            <h2 class="display-4" data-aos="fade-up" data-aos-delay="100">Solving Sepsis FAQ's</h2>
+            <span class="lead" data-aos="fade-up" data-aos-delay="200">Learn about our solving sepsis program by checking out our frequently asked questions</span>
+<br><br><hr />
+          </div>
+          <!--end of col-->
+        </div>
+        <!--end of row-->
+        <br><br>
+        <div class="row justify-content-around align-items-center faq">
+          <div class="col-12 col-md-6 col-lg-3">
+            <img alt="Image" src="img/sepsis_vector.jpg" class=" w-100" />
+          </div>
+          <!--end of col-->
+          <div class="col-12 col-md-9 col-lg-9">
+            <div class="accordion" id="accordion-1" data-children=".accordion-item">
+              <div class="accordion-item">
+                <a data-toggle="collapse" data-parent="#accordion-1" href="#accordion-panel-1" aria-expanded="true" aria-controls="accordion-1">
+                  <h5>I know Solving Sepsis is interested in diagnostics but are they also interested in therapeutics?</h5>
+                  <i class="h5 icon-chevron-small-right"></i>
+                </a>
+                <div id="accordion-panel-1" class="collapse show" role="tabpanel">
+                  <p>
+                    Yes. The Solving Sepsis program is interested in host-based therapeutics that include demonstration of efficacy in sepsis-relevant models, with a clear regulatory plan for FDA approval.
+                  </p>
+                </div>
+              </div>
+              <hr />
+              <div class="accordion-item">
+                <a data-toggle="collapse" data-parent="#accordion-1" href="#accordion-panel-2" aria-expanded="false" aria-controls="accordion-1">
+                  <h5>Do we need to demonstrate our technology in a sepsis population prior to submission?</h5>
+                  <i class="h5 icon-chevron-small-right"></i>
+                </a>
+                <div id="accordion-panel-2" class="collapse" role="tabpanel">
+                  <p>
+                    Proposed approaches should include demonstration of effectiveness in sepsis relevant models (e.g. utilizing sepsis patient samples, sepsis patient data).
+                  </p>
+                </div>
+              </div>
+              <hr />
+              <div class="accordion-item">
+                <a data-toggle="collapse" data-parent="#accordion-1" href="#accordion-panel-3" aria-expanded="false" aria-controls="accordion-1">
+                  <h5>Are you interested in pathogen-based tools for sepsis or just host-based ones?</h5>
+                  <i class="h5 icon-chevron-small-right"></i>
+                </a>
+                <div id="accordion-panel-3" class="collapse" role="tabpanel">
+                  <p>
+                    Solving Sepsis is interested in the host response to sepsis and therefore is only interested in host-based approaches when considering development of diagnostics, devices and therapeutics. BARDA has other existing programs for pathogen-targeted approaches.
+                  </p>
+                </div>
+              </div>
+              <hr />
+              <div class="accordion-item">
+                <a data-toggle="collapse" data-parent="#accordion-1" href="#accordion-panel-4" aria-expanded="false" aria-controls="accordion-1">
+                  <h5>How do I indicate references in my abstract submission?</h5>
+                  <i class="h5 icon-chevron-small-right"></i>
+                </a>
+                <div id="accordion-panel-4" class="collapse" role="tabpanel">
+                  <p>
+                    References must be included in the technical description section of the application but can be provided as a text link to a compiled list of references. Additionally, a PMID can be provided instead of the full reference.
+                  </p>
+                </div>
+              </div>
+              <hr />
+              <div class="accordion-item">
+                <a data-toggle="collapse" data-parent="#accordion-1" href="#accordion-panel-5" aria-expanded="false" aria-controls="accordion-1">
+                  <h5>My technology seeks to diagnose/treat bacterial-derived sepsis- is this a sufficient
+                    strategy for my abstract?</h5>
+                  <i class="h5 icon-chevron-small-right"></i>
+                </a>
+                <div id="accordion-panel-5" class="collapse" role="tabpanel">
+                  <p>
+                    Solving Sepsis is interested in medical countermeasures that address sepsis of any etiology (i.e. bacterial, viral, other) versus approaches that are limited to sepsis induced by a subset of pathogens.                  </p>
+                </div>
+              </div>
+              <hr />
+              <div class="accordion-item">
+                <a data-toggle="collapse" data-parent="#accordion-1" href="#accordion-panel-6" aria-expanded="false" aria-controls="accordion-1">
+                  <h5>What type of commercialization information should be included in my application?</h5>
+                  <i class="h5 icon-chevron-small-right"></i>
+                </a>
+                <div id="accordion-panel-6" class="collapse" role="tabpanel">
+                  <p>
+                    This may include establishment of partnerships with appropriate device fabricators/manufacturers, addressing the potential to scale, intellectual property and the means to address adoption in hospitals or other clinical settings.                </div>
+              </div>
+              <hr />
+              <div class="accordion-item">
+                <a data-toggle="collapse" data-parent="#accordion-1" href="#accordion-panel-7" aria-expanded="false" aria-controls="accordion-1">
+                  <h5>I have a technology that can address fluid management for patients that should include sepsis. Is the Solving Sepsis program interested?</h5>
+                  <i class="h5 icon-chevron-small-right"></i>
+                </a>
+                <div id="accordion-panel-7" class="collapse" role="tabpanel">
+                  <p>
+                    The technology must demonstrate improved outcomes for sepsis patients. Please provide preliminary data to support the technology evaluated in sepsis patients or in a sepsis model.              </div>
+            </div>
+            <hr />
+            <div class="accordion-item">
+              <a data-toggle="collapse" data-parent="#accordion-1" href="#accordion-panel-8" aria-expanded="false" aria-controls="accordion-1">
+                <h5>Is it possible to work with both DRIVe and another BARDA division on a project? How do I submit that idea?</h5>
+                <i class="h5 icon-chevron-small-right"></i>
+              </a>
+              <div id="accordion-panel-8" class="collapse" role="tabpanel">
+                <p>
+                  Yes! Please reach out to <a href="mailto:SolvingSepsis@hhs.gov">SolvingSepsis@hhs.gov</a> so that we can coordinate with the appropriate division and discuss a cross-collaboration idea as well as the best mechanism to submit the idea.          </div>
+          </div><br><br>
+          <!--end of col-->
+        </div>
+        <!--end of row-->
+      </div>
+      <!--end of container-->
+    </section>
+
+    <section class="media" style="background-color: #f8f9fa;">
+      <div  class="container">
+
+        <div class="row justify-content-center text-center section-intro">
+          <div class="col-12 col-md-9 col-lg-8">
+            <h2 class="display-4" data-aos="fade-up" data-aos-delay="100">Sepsis Team Highlights</h2>
+            <span class="lead" data-aos="fade-up" data-aos-delay="200">Discover the latest highlights from the solving sepsis team</span>
+<br><br>
+          </div>
+          <!--end of col-->
+        </div>
+        <!--end of row-->
+
+        <div class="row">
+
+          <div class="col-12 col-sm-6 col-md-4">
+            <div class="card card-lg">
+              <a href="#">
+                <img class="card-img-top" src="img/panel_thumb.jpg" alt="Pit Stop">
+              </a>
+              <div class="card-body">
+                <h5 class="card-title">Government's Role in Innovation Panel</h5>
+                <p class="card-text">Pitstop launched their MVP in under 3 months with Wingman</p>
+                <a href="#">Watch video &rsaquo;</a>
+              </div>
+            </div>
+          </div>
+          <!--end of col-->
+
+          <div class="col-12 col-sm-6 col-md-4">
+            <div class="card card-lg">
+              <a href="#">
+                <img class="card-img-top" src="img/sepsis_thumb.jpg" alt="Bench">
+              </a>
+              <div class="card-body">
+                <h5 class="card-title">Some Title</h5>
+                <p class="card-text">Bench built their business-facing invoicing system with Wingman.</p>
+                <a href="#">Watch video &rsaquo;</a>
+              </div>
+            </div>
+          </div>
+          <!--end of col-->
+
+          <div class="col-12 col-sm-6 col-md-4">
+            <div class="card card-lg">
+              <a href="#">
+                <img class="card-img-top" src="img/sepsis_awareness.jpg" alt="Movend">
+              </a>
+              <div class="card-body">
+                <h5 class="card-title">Sepsis Awareness Month</h5>
+                <p class="card-text">September is Sepsis Awareness Month</p>
+                <a href="#">Visit Website &rsaquo;</a>
+              </div>
+            </div>
+          </div>
+          <!--end of col-->
+
+        </div>
+        <!--end of row-->
+      </div>
+      <!--end of container-->
+    </section>
+    <!--end of section-->
+
+    <section class="media" style="background-color: #f8f9fa;">
+      <div  class="container">
+
+        <div class="row justify-content-center text-center section-intro">
+          <div class="col-12 col-md-9 col-lg-8">
+            <h2 class="display-4" data-aos="fade-up" data-aos-delay="100">Sepsis in the Government</h2>
+            <span class="lead" data-aos="fade-up" data-aos-delay="200">Discover how the Goverment is taking action to prevent Sepsis</span>
+<br><br><br>
+          </div>
+          <!--end of col-->
+        </div>
+        <!--end of row-->
+
+        <div class="row">
+
+          <div class="col-12 col-sm-6 col-md-4">
+            <div class="card card-lg">
+              <a href="#">
+                <img class="card-img-top" src="img/panel_thumb.jpg" alt="Pit Stop">
+              </a>
+              <div class="card-body">
+                <h5 class="card-title">This is a new Publication</h5>
+                <p class="card-text">Pitstop launched their MVP in under 3 months with Wingman</p>
+                <a href="#">Watch video &rsaquo;</a>
+              </div>
+            </div>
+          </div>
+          <!--end of col-->
+
+          <div class="col-12 col-sm-6 col-md-4">
+            <div class="card card-lg">
+              <a href="#">
+                <img class="card-img-top" src="img/sepsis_thumb.jpg" alt="Bench">
+              </a>
+              <div class="card-body">
+                <h5 class="card-title">This is a new Publication</h5>
+                <p class="card-text">Bench built their business-facing invoicing system with Wingman.</p>
+                <a href="#">Watch video &rsaquo;</a>
+              </div>
+            </div>
+          </div>
+          <!--end of col-->
+
+          <div class="col-12 col-sm-6 col-md-4">
+            <div class="card card-lg">
+              <a href="#">
+                <img class="card-img-top" src="img/sepsis_awareness.jpg" alt="Movend">
+              </a>
+              <div class="card-body">
+                <h5 class="card-title">This is a new Publication</h5>
+                <p class="card-text">September is Sepsis Awareness Month</p>
+                <a href="#">Visit Website &rsaquo;</a>
+              
+              </div>
+            </div>
+          </div>
+          <!--end of col-->
+
+        </div>
+        <!--end of row--><br><br>
+      </div>
+      <!--end of container-->
+    </section>
+    <!--end of section-->
+  
+	
+    </div>
+
+  </div>
+</div>
+	<br /><br />
+  <section class="bg-white">
+    <div class="container">
+      <div class="row section-intro">
+        <div class="col text-center">
+          <h3 class="h1"><a href="files/DRIVe_One_Pagers_Sepsis.pdf">Download the Solving Sepsis Fact Sheet</a></h3><br>
+          <h5>Submit your <a target="_blank" href="https://beta.sam.gov/opp/f2b87e34fecf47d0a48e9b03e8e826ff/view">EZ BAA Abstract</a></h5>
+
+          <br>
+          <p>For more information, please contact us at <a href="#">solvingsepsis@hhs.gov</a></p>
+
+        </div>
+        <!--end of col-->
+      </div>
+      <!--end of row-->
+
+    </div>
+    <!--end of container-->
+  </section>
+  <!--end of section-->
+
+
+
+
+	<!--   END: TAB CONTENT -->
+	
+	
+	<div class="example">
+    <p><b class="timer" id="lollipop" data-to="999999" data-from="functon() {100000/4;};" data-speed="10000" data-refresh-interval="60000"></b></p>
+  </div>
+	
+
+<!-- Footer -->
+ <div id="includefooter"></div>
+<!-- Footer --------->
+	
+
+	<!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+	<div id="scroll-top-link"
+		class="scroll-top page-scroll visible-xs visible-sm">
+		<a class="btn btn-primary" href="#page-top"> <i
+			class="fa fa-chevron-up"></i>
+		</a>
+	</div>
+</body>
+
+</html>
+

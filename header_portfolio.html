@@ -1,0 +1,202 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+	
+	<script>
+// jquery ready start
+$(document).ready(function() {
+	// jQuery code
+
+	//////////////////////// Prevent closing from click inside dropdown
+    $(document).on('click', '.dropdown-menu', function (e) {
+      e.stopPropagation();
+    });
+	
+}); // jquery end
+</script>
+	
+<script>
+	$('.dropdown-menu a.dropdown-toggle').on('click', function(e) {
+  if (!$(this).next().hasClass('show')) {
+    $(this).parents('.dropdown-menu').first().find('.show').removeClass("show");
+  }
+  var $subMenu = $(this).next(".dropdown-menu");
+  $subMenu.toggleClass('show');
+
+
+  $(this).parents('li.nav-item.dropdown.show').on('hidden.bs.dropdown', function(e) {
+    $('.dropdown-submenu .show').removeClass("show");
+  });
+
+
+  return false;
+});
+	
+	
+	</script>
+
+<style type="text/css">
+	.dropdown-submenu {
+  position: relative;
+}
+
+.dropdown-submenu a::after {
+  transform: rotate(-90deg);
+  position: absolute;
+  right: 6px;
+  top: .8em;
+}
+
+.dropdown-submenu .dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-left: .1rem;
+  margin-right: .1rem;
+}
+	
+	
+
+.dropdown-large{ padding:20px; }
+
+@media all and (min-width: 992px) {
+
+	.dropdown-large{min-width:500px;}
+
+}
+	
+	.bg-primary {
+		background-color: #FFFFFF !important;
+	}
+	
+	.navbar-dark .navbar-nav .nav-link {
+		color: #000000 !important;
+	}
+</style>	
+
+</head>
+
+<body>
+	
+
+	
+	
+
+	<!-- Navigation -->
+	<nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color: #fff;">
+		<div style="padding-right: 30px;" class="fixed-top topbar row" >
+			<div class="ml-auto"><img alt="HHS logo" height="20px" style="margin-right: 7px;" src="../img/HHS-Logo.png"></div>
+			<div>
+			<p><a style="color: #fff;" target="_blank" href="https://www.hhs.gov/">U.S. Department of Health & Human Services</a>  |  
+			<a style="color: #fff;"  target="_blank" href="https://www.phe.gov/preparedness/pages/default.aspx">Assistant Secretary for Preparedness and Response</a>  |  <a style="color: #fff;"  target="_blank" href="https://medicalcountermeasures.gov/">Biomedical Advanced Research and Development Authority</a> </p>
+			</div> 
+			</div>
+
+		<a class="navbar-brand" href="../index.html" title="Go to home page">
+			<img style="width: 186px; height: 75px;" src="../img/DRIVeLogo_Hirez.png" alt="DRIVe logo" />
+		</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item dropdown">
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+				
+						
+						<li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         About
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <li><a class="dropdown-item" href="../about.html">About</a></li>
+          <li><a class="dropdown-item" href="../team.html">Team</a></li>
+		<li><a class="dropdown-item" href="../map/index.html">Portfolio</a></li>
+		<li><a class="dropdown-item" href="../insights.html">Director's Corner</a></li>
+		<li><a class="dropdown-item" href="../resources.html">Resources</a></li>
+		
+      </ul>
+					
+					
+						<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+					 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Programs</a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+						<a class="dropdown-item" href="../beyondtheneedle.html">Beyond The Needle</a>
+						<a class="dropdown-item" href="../homediagnostics.html">Bringing Laboratory Testing to the Home</a>
+						<a class="dropdown-item" href="../digitalmcm.html">Digital Medical Countermeasures </a>
+						<a class="dropdown-item" href="../enact.html">ENACT</a>
+						<a class="dropdown-item" href="../immunechip.html">ImmuneChip+</a>
+						<a class="dropdown-item" href="../ReDIRECT.html">ReDIRECT</a>
+						 <a class="dropdown-item" href="../solvingsepsis.html">Solving Sepsis</a>
+					</div>
+				</li>
+
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item dropdown">
+						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					
+							
+							<li class="nav-item dropdown">
+			<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			 Opportunities
+			</a>
+			<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+			  <li><a class="dropdown-item" href="../partner.html">BARDA DRIVe EZ-BAA</a></li>
+		
+			
+			  <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="#">Challenges</a>
+				<ul class="dropdown-menu">
+				  <li><a class="dropdown-item" href="../mask_challenge.html">Mask Challenge</a></li>
+				  <li><a class="dropdown-item" href="../pediatric_challenge.html">Pediatric COVID-19 Data <br>Challenge</a></li>
+				
+			
+					</li>
+				
+								</ul>		
+						
+								<li><a class="dropdown-item" href="../ngs.html">NGS-based Agnostic Diagnostic</a></li>	
+					</li>
+						<!--<li><a class="dropdown-item" href="mask_challenge.html">Mask Innovation Challenge</a></li>-->	
+							<!--<li><a class="dropdown-item disabled" href="#">DRIVe Annual Report</a></li>-->
+							</ul>
+						
+				
+					<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+					 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Catalyst</a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+						 <a class="dropdown-item" href="../accelerators.html">Accelerators</a>
+						<a class="dropdown-item" href="../ventures.html">BARDA Ventures</a>
+						
+					</div>
+				</li>
+				
+				
+			
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item dropdown">
+						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					
+							
+							<li class="nav-item dropdown">
+			<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			News & Events
+			</a>
+			<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+			  <li><a class="dropdown-item" href="../news.html">News</a></li>
+			  <li><a class="dropdown-item" href="../index.html#driveevents">Events</a></li>
+			
+			 
+				 
+			
+					</li>
+								</ul>
+			</ul>
+		</div>
+	</nav> 
+	
+	
+	
+</body>
+</html>

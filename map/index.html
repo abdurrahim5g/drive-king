@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="robots" content="index,follow" />
+	<meta name="keywords" content="" />
+	<meta name="description" content="DRIVe is transforming health security innovation to protect Americans from 21st century health security threats" />
+	<meta name="author" content="Barda DRIVe" />
+	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:site" content="@BARDA" />
+	<meta name="twitter:title" content="DRIVe Portfolio" />
+	<meta name="twitter:description" content="An ecosystem Powered by DRIVe." />
+	<meta name="twitter:image" content="/img/twitter_card_portfolio.png" />
+	<meta name="twitter:image:alt" content="DRIVe Portfolio" />
+
+	<title>DRIVe</title>
+
+	<link rel="icon" href="../drive-icon.png" />
+	<link rel="apple-touch-icon" href="../drive-apple-icon.png" />
+
+	<!-- Custom Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel="stylesheet">
+	<link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+	<!-- Bootstrap Core CSS -->
+	<link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css">
+	<link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css">
+	<link href="../css/grayscale.css" rel="stylesheet" type="text/css">
+	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+
+	<!-- Custom CSS -->
+	<link href="../css/theme.css" rel="stylesheet">
+
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+		<script src="../js/ie/html5shiv.js"></script>
+		<script src="../js/ie/respond.min.js"></script>
+	<![endif]-->
+
+	<!-- map -->
+	<link href="fonts/OpenSans.css" rel="stylesheet">
+	<link href="fonts/PathwayGothicOne.css" rel="stylesheet">
+	<link href="fonts/MaterialIcons.css" rel="stylesheet">
+
+	<link href="css/mapstyles.css" rel="stylesheet">
+
+	<link href="css/darktheme.css" rel="stylesheet">
+	<link href="css/whitetheme.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/leaflet.css">
+	<link rel="stylesheet" href="css/MarkerCluster.css">
+	<link rel="stylesheet" href="css/MarkerCluster.Default.css">
+	<!--<link rel="stylesheet" href="css/styles.css">-->
+	<script src="js/leaflet.js"></script>
+	<!--<script src="js/jquery-2.1.1.min.js"></script>-->
+	<script src="js/leaflet.markercluster.js"></script>
+
+	<!-- NOTE: Make sure JQuery is loaded before Bootstrap. Otherwise, tabs will not toggle. -->
+	<script src="../js/jquery-min.js"></script>
+
+	<!-- Bootstrap Core JavaScript -->
+
+	<!-- jQuery -->
+	<script src="../js/jquery-min.js"></script>
+
+	<!-- Needed for tooltips -->
+	<script src="../js/popper.min.js"></script>
+
+	<!-- Bootstrap Core JavaScript -->
+	<script src="../js/bootstrap.min.js"></script>
+
+	<!--- Non-GOV Website Dialog popup -->
+	<script src="../js/confirmExit.js"></script>
+
+	<!-- bootstrap toggle -->
+	<link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+	<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+
+	<!-- Header, Footer Include -->
+	<script>
+		$(function () {
+			$("#includeheader").load("../header_portfolio.html");
+			$("#includefooter").load("../footer.html");
+		});
+	</script>
+
+	<!-- Dropdown Menu -->
+	<script>
+		$('.dropdown-menu a.dropdown-toggle').on('click', function (e) {
+			if (!$(this).next().hasClass('show')) {
+				$(this).parents('.dropdown-menu').first().find('.show').removeClass("show");
+			}
+			var $subMenu = $(this).next(".dropdown-menu");
+			$subMenu.toggleClass('show');
+
+			$(this).parents('li.nav-item.dropdown.show').on('hidden.bs.dropdown', function (e) {
+				$('.dropdown-submenu .show').removeClass("show");
+			});
+
+			return false;
+		});
+	</script>
+	<!-- Dropdown Menu -->
+
+	<style>
+		.dropdown-submenu {
+			position: relative;
+		}
+
+		.dropdown-submenu a::after {
+			transform: rotate(-90deg);
+			position: absolute;
+			right: 6px;
+			top: .8em;
+		}
+
+		.dropdown-submenu .dropdown-menu {
+			top: 0;
+			left: 100%;
+			margin-left: .1rem;
+			margin-right: .1rem;
+		}
+
+		.custom-select {
+			background-color: #000000;
+		}
+
+		.sub-banner-heading-text {
+			font-size: 18px !important;
+		}
+
+		@media (min-width :530px) {
+			.sub-banner-heading-text {
+				font-size: 24px !important;
+			}
+		}
+
+		@media (min-width :992px) {
+			.sub-banner-heading-text {
+				font-size: 32px !important;
+			}
+		}
+
+		/* @media {
+			.row.equal {
+				flex-wrap: wrap;
+				display: flex;
+			}
+
+			.tiplabel {
+				font-weight: bold;
+				font-family: 'Raleway', sans-serif;
+			}
+		} */
+
+		.nav-link.active {
+			border-color: #000000 !important;
+			border-bottom: none;
+			border-left: none;
+			border-right: none;
+
+		}
+
+		.nav-link:hover {
+			border-color: #000000 !important;
+			border-bottom: none;
+			border-left: none;
+			border-right: none;
+
+		}
+
+		.leaflet-popup {
+			display: none;
+		}
+
+		.home-banner-heading h3 {
+			letter-spacing: 8px; 
+			color: #282828; 
+			font-size: 80px; 
+			text-transform: none; 
+			/* font-family: 'Allura';  */
+			font-family: 'Sans serif';
+			font-weight: 600;
+		}
+	</style>
+</head>
+
+<body id="page-top" class="index">
+	<!-- Google Tag Manager -->
+	<script>
+		(function (i, s, o, g, r, a, m) {
+			i['GoogleAnalyticsObject'] = r;
+			i[r] = i[r] || function () {
+				(i[r].q = i[r].q || []).push(arguments)
+			}, i[r].l = 1 * new Date();
+			a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+			a.async = 1;
+			a.src = g;
+			m.parentNode.insertBefore(a, m)
+		})(window, document, 'script',
+			'https://www.google-analytics.com/analytics.js', 'ga');
+
+		ga('create', 'UA-122497508-1', 'auto');
+		ga('send', 'pageview');
+	</script>
+	<!-- End Google Tag Manager -->
+
+	<!-- Navigation -->
+	<div id="includeheader"></div>
+	<!-- End Navigation -->
+
+	<!-- Header -->
+	<header style="border-bottom: 1px solid #efefef;" id="banner">
+		<div class="jumbotron services">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12 banner-text-container">
+						<div class="banner-text">
+							<div class=" green">
+								<div class="home-banner-heading">
+									<h3 class="title">
+										DRIVe PORTFOLIO
+									</h3>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+	<!-- <section>
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 text-center">
+					<h5>DRIVe is
+						building an ecosystem of restless innovators that includes
+						investors, companies, and research teams offering solutions to
+						a broad range of national health security threats. These
+						include drugs and indicators to reduce illness and death from
+						sepsis, technologies and processes to identify biological and
+						other threats, and tools and techniques to mitigate the
+						damages and loss of life associated with catastrophic events.
+					</h5>
+				</div>
+			</div>
+		</div>
+	</section> -->
+	<!-- <section style="margin-top: 40px; margin-bottom: 40px">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-xs-8 text-center">
+					<div class="row">
+						<div class="col-xs-6 text-center">
+							<p> <strong>DRIVe Investments to Date:&nbsp; </strong> </p>
+							<p> <strong>Cost-Share to Date:&nbsp; </strong> </p>
+						</div>
+						<div class="col-xs-6 text-left" id="fundingCounters"> -->
+							<!-- Auto-generated values -->
+						<!-- </div>
+					</div>
+				</div> -->
+				<!--<div class="col-xs-6 text-left" id="fundingCounters">
+					 Auto-generated values -->
+			<!-- </div>
+		</div>
+	</section> -->
+	<!--	<div id="mapdiv-assets"></div>-->
+	<section style="background-color: #fff;">
+		<div class="container portfolios-area">
+			<div class="row">
+				<!-- <div class="col-xs-12" style="width: 100%">
+					<ul class="nav nav-tabs" role="tab-list">
+						<li class="nav-item">
+							<a class="nav-link active" data-toggle="tab" href="#gallery">Gallery</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" data-toggle="tab" href="#impact-areas">Impact Areas</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" data-toggle="tab" href="#assets">Investments</a>
+						</li>
+					</ul>
+				</div> -->
+			</div>
+			<div class="tab-content">
+				<div id="impact-areas" class="container tab-pane fade">
+					<div class="map-container container-fluid">
+						<div class="row">
+							<div class="col-sm-12 map-col" id="map-col-impact-areas">
+								<div class="picholder" id="picholder-impact-areas"></div>
+								<div class="clearfix vizholder" id="vizholder-impact-areas">
+									<div class="selections clearfix">
+										<div class="row">
+											<div class="col-sm-4">
+												<p style="padding-top: 10px; margin-bottom: 0px">Impact Areas</p>
+												<ul style="margin-top: 0px; padding-bottom: 0px;">
+													<li class="selector" id="sepsisselector">Sepsis</li>
+													<li class="selector" id="fluselector">Influenza</li>
+													<li id="instructions"></li>
+												</ul>
+											</div>
+											<div class="col-sm-8">
+												<ul class="sub">
+													<li class="us-state-drop-down" id="zoomdrop-impact-areas">Zoom to:</li>
+													<li class="reset_map">Reset Zoom</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+									<div class="clearfix mapholder" id="mapholder-impact-areas">
+										<div class="clearfix mapdiv" id="mapdiv-impact-areas"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="assets" class="container tab-pane fade">
+					<div class="map-container container-fluid">
+						<div class="row">
+							<div class="col-sm-12 map-col" id="map-col-assets">
+								<div class="picholder" id="picholder-assets"></div>
+								<div class="clearfix vizholder" id="vizholder-assets">
+									<div class="selections clearfix">
+										<div class="row">
+											<div class="col-sm-4">
+												<p style="padding-top: 10px; margin-bottom: 0px">Funding Type</p>
+												<ul style="margin-top: 0px; padding-bottom: 0px">
+													<li class="selector" id="accelselector">Accelerators</li>
+													<li class="selector" id="productselector">Products</li>
+													<li id="instructions"></li>
+												</ul>
+											</div>
+											<div class="col-sm-8">
+												<ul class="sub">
+													<li class="us-state-drop-down" id="zoomdrop-assets">Zoom to:</li>
+													<li class="reset_map">Reset Zoom</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+									<div id="map-info">
+										<div class="clearfix mapholder" id="mapholder-assets">
+											<div class="clearfix mapdiv" id="mapdiv-assets"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="gallery" class="container tab-pane active">
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col-sm-12">
+								<div class="selections clearfix">
+								
+									<div class="row category-list">
+										<!-- <div class="col-lg-6 col-sm-6 col-xs-12 display-end"> -->
+										<div class="display-start">
+											<ul class="sub selectdiv">
+												<li class="gallery-drop-down" id="zoomdrop-impact-area-drop-down">
+													<!-- Program Area: -->
+													<div class="response-menu">
+														<span class="glyphicon glyphicon-chevron-down"></span>
+														<span>Filter By Programs</span>
+													</div>
+												</li>
+											</ul>
+										</div>
+										<!-- <div class="col-lg-6 col-sm-6 col-xs-12 display-start"> -->
+										<div class="display-start">
+											<ul class="sub selectdiv">
+												<li class="gallery-drop-down" id="zoomdrop-product-type-drop-down">
+													<!-- Product Type: -->
+													<div class="response-menu">
+														<span class="glyphicon glyphicon-chevron-down"></span>
+														<span>Filter By Product Types</span>
+													</div>
+												</li>
+											</ul>
+										</div>
+										<!-- <div class="col-lg-3 col-sm-6 col-xs-12">
+											<ul class="sub selectdiv">
+												<li class="gallery-drop-down" id="zoomdrop-technology-level-drop-down">
+													Technology Level:
+												</li>
+											</ul>
+										</div>
+										<div class="col-lg-3 col-sm-6 col-xs-12">
+											<ul class="sub selectdiv">
+												<li class="gallery-drop-down" id="zoomdrop-country-level-drop-down">
+													Country:
+												</li>
+											</ul>
+										</div> -->
+										<!-- <div class="col-lg-4 col-sm-6 col-xs-12 display-center">
+											<ul class="sub selectdiv">
+												<li class="gallery-drop-down" id="zoomdrop-product-drop-down">
+												</li>
+											</ul>
+										</div> -->
+									</div>
+									<!-- active/inactive toggle button -->
+									<!-- <div class="row display-center">
+										<input id="toggle-event" type="checkbox" data-toggle="toggle" data-on="Active" data-off="InActive" checked data-onstyle="primary" data-offstyle="danger">
+									</div> -->
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<br />
+					<div class="row container" style="margin: auto;">
+						<div class="clearfix text-center col-12"  id="mapholder">
+							<div class="text-center" id="gallery-content">
+								<!-- Gallery content procedurely generated here -->
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script src="js/d3.v4.min.js"></script>
+		<script src="js/d3-scale-chromatic.v1.min.js"></script>
+		<script src="js/queue.v1.min.js"></script>
+		<script src="js/utils.js"></script>
+		<script src="js/albers-usa-pr.js"></script>
+		<script src="js/newflumapWhite.js"></script>
+
+		<script>
+			$(function () {
+				$('[data-toggle="tooltip"]').tooltip();
+			})
+		</script><br />
+	</section>
+
+	<section>
+		<div class="container">
+			<div class="row text-center">
+				<div class="col-xs-12" style="padding: 40px;">
+					<p>
+						<b>DRIVe</b> (<b>D</b>ivision of <b>R</b>esearch, <b>I</b>nnovation,
+						and <b>Ve</b>ntures) was established by the <b>B</b>iomedical <b>A</b>dvanced
+						<b>R</b>esearch and <b>D</b>evelopment <b>A</b>uthority (<a
+							href="https://medicalcountermeasures.gov/" target="_blank"><b>BARDA</b></a>),
+						part of the <b>A</b>ssistant <b>S</b>ecretary for <b>P</b>reparedness
+						and <b>R</b>esponse (<a href="http://www.phe.gov/" target="_blank"><b>ASPR</b></a>), within the
+						United States
+						Department of <b>H</b>ealth and <b>H</b>uman <b>S</b>ervices (<a href="http://www.hhs.gov/"
+							target="_blank"><b>HHS</b></a>).
+					</p>
+					<div class="text-center footer_logos" style="margin-top: 20px; margin-bottom: 20px;">
+						<a target="_blank" href="https://hhs.gov"><img
+								alt="Department of Health &amp; Human Services - USA" src="../img/logos/dhhs.png"
+								style="height: 100px;"></a> <a target="_blank" href="https://phe.gov"><img alt="ASPR"
+								src="../img/logos/aspr.png" style="height: 80px;"></a> <a target="_blank"
+							href="https://medicalcountermeasures.gov/"><img alt="BARDA logo"
+								src="../img/logos/barda.png" style="height: 80px;" /></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--   END: CONTENT -->
+	<!-- Footer -->
+	<footer class="page-footer font-small stylish-color-dark pt-4">
+		<!-- Footer Links -->
+		<div class="container text-center text-md-left">
+			<!-- Grid row -->
+			<div class="row">
+				<!-- Grid column -->
+				<div class="col-md-4 mx-auto">
+					<!-- Content -->
+					<h5 class="text-uppercase mt-3 mb-4">MISSION</h5>
+					<p style="color: #FFFFFF;">To help BARDA be prepared for any public health emergency by identifying and derisking the world’s most promising technologies and capabilities, no matter their origin, towards the development of tomorrow’s medical countermeasures​.</p>
+				<!--<img class="img-centered img-fluid " alt="DRIVe Logo" style="max-height: 80px; padding-top: 20px"	
+						src="../img/drive-logo-white.png"><br>-->
+				</div>
+				<!-- Grid column -->
+
+				<hr class="clearfix w-100 d-md-none">
+
+				<!-- Grid column -->
+				<div class="col-md-2 mx-auto social_img">
+					<h5 class="text-uppercase mt-3 mb-4">FOLLOW US</h5>
+					<a href="https://twitter.com/intent/follow?original_referer=https%3A%2F%2Fdrive.hhs.gov%2Fimpactareas.html&ref_src=twsrc%5Etfw&screen_name=BARDA&tw_p=followbutton"
+						target="_blank" data-show-count="false"><img title="Follow BARDA on Twitter"
+							src="../img/twitter_rev_icon.png" width="25" height="20"
+							alt="Follow BARDA on Twitter" /></a>
+					<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+					<a href="https://www.linkedin.com/showcase/barda/" target="_blank" data-show-count="false"><img
+							title="Follow BARDA on LinkedIn" src="../img/linkedin_rev_icon.png" width="25" height="26"
+							alt="Follow BARDA on LinkedIn" /></a> <a href="https://cloud.connect.hhs.gov/drive"
+						target="_blank" data-show-count="false"></a>
+
+				</div>
+				<!-- Grid column -->
+				<hr class="clearfix w-100 d-md-none">
+
+				<!-- Grid column -->
+				<div class="col-md-2 mx-auto">
+				</div>
+
+				<!-- Grid column -->
+				<hr class="clearfix w-100 d-md-none">
+
+				<!-- Grid column -->
+				<div class="col-md-2 mx-auto">
+					<!-- Links -->
+					<h5 class="text-uppercase mt-3 mb-4">Resources</h5>
+					<ul class="list-unstyled">
+						<li> <a target="_blank" href="../privacypolicy.html">Privacy Policy</a></li>
+						<li> <a target="_blank" href="../disclaimers.html">Website Disclaimers</a></li>
+						<li> <a target="_blank" href="http://www.usa.gov/">USA.gov</a></li>
+						<li> <a target="_blank" href="http://www.whitehouse.gov/">White House</a></li>
+						<li> <a target="_blank" href="http://www.hhs.gov/foia/">FOIA</a></li>
+						<li> <a target="_blank" href="https://www.hhs.gov/plugins.html">Viewers & Players</a></li>
+					</ul>
+				</div>
+				<!-- Grid column -->
+			</div>
+			<!-- Grid row -->
+		</div>
+		<!-- Footer Links -->
+	
+			<ul class="list-unstyled list-inline text-center py-2">
+			<li class="list-inline-item">
+				<h5 class="mb-1">Sign up for the newsletter</h5>
+			</li>
+			<li class="list-inline-item">
+				<a target="_blank" href="https://cloud.connect.hhs.gov/drive" class="btn btn_newsletter btn-rounded">Sign up!</a>
+			</li>
+			</ul> 
+		<!-- Call to action -->
+
+		<hr>
+		<!-- Copyright -->
+		<div style="background-color: #000000;" class="footer-copyright text-center py-3">This is an official U.S.
+			Government Web site managed by the U.S. Department of Health &amp; Human Services. <br />
+			<hr /><a href="mailto:DRIVeWebmaster@hhs.gov">Contact Webmaster</a><br>
+		</div>
+		<!-- Copyright -->
+		<!-- Footer --------->
+	</footer>
+
+	<!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+	<div id="scroll-top-link" class="scroll-top page-scroll visible-xs visible-sm">
+		<a class="btn btn-primary" href="#page-top"> 
+			<i class="fa fa-chevron-up"></i>
+		</a>
+	</div>
+
+	<script>
+		$(document).ready(function () {
+			$("#zoomdrop-impact-area-drop-down option").html(function (i, str) {
+				return str.replace(/Other|Beyond the Needle/g,
+					function (m, n) {
+						return (m == "Beyond the Needle") ? "Other" : "Beyond the Needle";
+					}
+				);
+			});
+		});
+
+		$(document).on("scroll", function () {
+			if ($(document).scrollTop() > 100) {
+				$(".navbar-fixed-top").addClass("navbar-shrink");
+				$(".navbar-brand").addClass("navbar-brand-shrink");
+			} else {
+				$(".navbar-fixed-top").removeClass("navbar-shrink");
+				$(".navbar-brand").removeClass("navbar-brand-shrink");
+			}
+		});
+
+		$(document).click(function (e) {
+			if (!$(e.target).is('#mapholder-assets, #mapholder-assets *')) {
+				reset();
+			}
+		});
+		// $(function() {
+		// 	$('#toggle-event').change(function() {
+		// 		const status = $(this).prop('checked') ? "Active" : "InActive";
+		// 		showProductsByStatus(status);
+		// 	});
+		// })
+	</script>
+</body>
+
+</html>

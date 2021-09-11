@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<meta name="format-detection" content="telephone=no" />
+
+	<link rel="icon" href="drive-icon.png" />
+	<link rel="apple-touch-icon" href="img/drive-apple-icon.png" />
+
+	<meta name="robots" content="index,follow" />
+
+	<meta name="keywords" content="" />
+	<meta name="description"
+		content="DRIVe is transforming health security innovation to protect Americans from 21st century health security threats" />
+	<meta name="author" content="Barda DRIVe" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:site" content="@BARDA" />
+	<meta name="twitter:title" content="Accelerating Innovation Across America." />
+	<meta name="twitter:description" content="DRIVe is decentralizing innovation across the country. Find out how." />
+	<meta name="twitter:image" content="https://drive.hhs.gov/img/twitter_card_accelerators2.png" />
+	<meta name="twitter:image:alt" content="Banner for DRIVe Accelerators" />
+
+	<title>DRIVe</title>
+
+	<!-- Custom Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+	<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+	<!-- Bootstrap Core CSS -->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+
+	<!-- Custom CSS -->
+	<link href="css/theme.css" rel="stylesheet">
+	<link href="css/ped_challenge.css" rel="stylesheet">
+
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+	<script src="/drivepubhtml/js/ie/html5shiv.js"></script>
+	<script src="/drivepubhtml/js/ie/respond.min.js"></script>
+	<![endif]-->
+
+	<!-- jQuery -->
+	<script src="js/jquery-min.js"></script>
+
+	<!-- Bootstrap Core JavaScript -->
+	<script src="js/bootstrap.min.js"></script>
+
+	<!-- Footer Include -->
+	<script>
+		$(function () {
+			$("#includefooter").load("footer.html");
+		});
+	</script>
+
+	<!-- Header Include -->
+	<script>
+		$(function () {
+			$("#includeheader").load("header.html");
+		});
+	</script>
+
+
+	<!--- Non-GOV Website Dialog popup -->
+	<script src="js/confirmExit.js"></script>
+
+	<script>
+		$(function () {
+			$('[data-toggle="tooltip"]').tooltip();
+		})
+
+		function scrollRelativeTo(id, px) {
+			var x = $(id).position();
+			window.scrollTo(x.left, x.top + px)
+		}
+
+		$(document).ready(function () {
+			var scrollFactor = -100;
+			var href = window.location.href;
+			if (href.endsWith("id=applyNow")) {
+				scrollRelativeTo("#applyNow", scrollFactor);
+			}
+			else if (href.endsWith("id=partneringApproaches")) {
+				scrollRelativeTo("#partneringApproaches", scrollFactor);
+			}
+
+		});
+	</script>
+
+	<!--- Image Swaps -->
+	<script>
+		var sourceSwap = function () {
+			var $this = $(this);
+			var newSource = $this.data('alt-src');
+			$this.data('alt-src', $this.attr('src'));
+			$this.attr('src', newSource);
+		}
+	</script>
+
+	<style>
+		@media (min-width : 768px) {
+			.nav-tabs li {
+				font-size: 125%;
+			}
+		}
+
+		@media (max-width: 768px) {
+			.banner-image {
+				width: 500px;
+			}
+			.card-image {
+				width: 300px;
+			}
+		}
+
+		@media (min-width : 992px) {
+			.nav-tabs li {
+				font-size: 150%;
+			}
+		}
+	</style>
+
+</head>
+
+<body id="page-top" class="index">
+	<!-- Google Tag Manager -->
+	<script>
+			(function (i, s, o, g, r, a, m) {
+				i['GoogleAnalyticsObject'] = r;
+				i[r] = i[r] || function () {
+					(i[r].q = i[r].q || []).push(arguments)
+				}, i[r].l = 1 * new Date();
+				a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+				a.async = 1;
+				a.src = g;
+				m.parentNode.insertBefore(a, m)
+			})(window, document, 'script',
+				'https://www.google-analytics.com/analytics.js', 'ga');
+
+		ga('create', 'UA-122497508-1', 'auto');
+		ga('send', 'pageview');
+	</script>
+	<!-- End Google Tag Manager -->
+
+	<!-- Navigation -->
+	<div id="includeheader"></div>
+	<!-- End Navigation -->
+
+
+	<!-- Header -->
+	<header style="border-bottom: 1px solid #efefef; padding-bottom: 20px;" id="banner">
+		<div class="jumbotron services" style="background-color: #FFFFFF;">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12 banner-text-container">
+						<div class="banner-text">
+							<div class=" green">
+								<div class="home-banner-heading">
+									<h3 class="title"
+										style="letter-spacing: 8px; color: #282828; font-size: 40px; text-transform: none">
+										PEDIATRIC COVID-19 DATA CHALLENGE</h3>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<!--parterships gray boxes -->
+	<link href="css/grayscale.css" rel="stylesheet" type="text/css">
+
+	<!-- Font Awesome Version 5.0 -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+		integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
+  <!-- header-area end-->
+
+	<section class="hero-area">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="hero-content">
+						<div class="logo">
+							<a href="#"><img src="img/Pediatric-COVID-19.png" alt="Logo" /></a>
+						</div><br><br>
+						<h5>For more information including how to apply:</h5>
+						<a href=" https://www.challenge.gov/challenge/pediatric-covid19-data-challenge/" target="_blank" style="text-decoration: none"> https://www.challenge.gov/challenge/pediatric-covid19-data-challenge/</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+<br><br>
+
+
+<section style="border-top: 1px solid #ccc;border-bottom: 1px solid #ccc; padding-bottom: 0px;" class="bg-white fullwidth-split">
+	<div class="container-fluid">
+	  <div class="row no-gutters">
+		<div class="col-12 col-sm-5 col-lg-6 fullwidth-split-image">
+		  <img alt="Image" src="img/covid_children.jpg" class="bg-image" />
+		</div>
+		<!--end of col-->
+		<div class="col-12 col-sm-7 col-lg-6 fullwidth-split-text">
+		  <div class="col-12 col-sm-8">
+			<h3 class="h1" data-aos="fade-up">Covid-19 in Children</h3><hr /><br>
+		  
+		
+			<p>
+				While most children with COVID-19 are asymptomatic or have mild symptoms, it is still difficult to determine which children will progress to moderate or severe COVID-19 early in the progression.
+			</p>
+			
+				<p>
+					Some of these children develop Multisystem Inflammatory
+					Syndrome in Children, MIS-C, a severe
+					inflammation of organs and tissues.
+				</p>
+				<p>
+					Methods to distinguish children at risk for severe COVID-19
+					complications, including conditions such as MIS-C are needed
+					to enable development of early interventions to improve
+					pediatric patient outcomes.
+				</p>
+			
+	  
+				
+		  </div>
+		</div>
+		<!--end of col-->
+	  </div>
+	  <!--end of row-->
+	</div>
+	<!--end of container-->
+  </section>
+  <!--end of section-->
+
+
+<section style="background-color: #e9ecef; ">
+	<div class="container" data-aos="fade-up">
+	  <div class="row justify-content-center text-center section-intro">
+		<div class="col-12 col-md-9 col-lg-8"><br>
+		  <h1 style="color:#282828;">Challenge Details</h1>
+<br><br>
+		</div>
+		<!--end of col-->
+	  </div>
+	  <!--end of row-->
+
+	  <ul class="feature-list feature-list-lg">
+		<li class="row justify-content-around align-items-center">
+		  <div class="col-12 col-md-6 col-lg-5">
+			<img alt="Image" src="img/covid_hospital.jpg" class="img-fluid rounded" />
+		  </div>
+		  <!--end of col-->
+		  <div class="col-12 col-md-6 col-lg-5">
+			<h3 data-aos="fade-up" data-aos-delay="50">Data Challenge</h3><hr />
+			<p data-aos="fade-up" data-aos-delay="150">
+				Challenge participants will be asked to develop, train, and
+				validate computational models to predict pediatric patients at
+				risk for hospitalization, need for ventilation, and
+				cardiovascular interventions, utilizing deindetified
+				electronic health record data available through NCATS'
+				National COVID Cohort Collaborative (N3C) Data Enclave.			</p>
+		  </div>
+		  <!--end of col-->
+		</li>
+		<li class="row justify-content-around align-items-center">
+		  <div class="col-12 col-md-6 col-lg-5 order-lg-2">
+			<img alt="Image" src="img/boy_hospital.jpg" class="img-fluid rounded" />
+		  </div>
+		  <!--end of col-->
+		  <div class="col-12 col-md-6 col-lg-5 order-lg-1">
+			<h3 data-aos="fade-up" data-aos-delay="50">Data Challenge Prize</h3><hr />
+			<p data-aos="fade-up" data-aos-delay="150">
+				<p>
+					Total cash prize purse is $200,000 from BARDA, split among up
+					to three winners.
+				</p>
+				<p>
+					Winners may also be eligible to apply for follow on funding
+					support and in-kind services from BARDA for further technology
+					development and clinical evaluation.
+				</p>			</p>
+		  </div>
+		  <!--end of col-->
+		</li>
+	  </ul>
+	</div>
+	<!--end of container-->
+  </section>
+  <!--end of section-->
+
+
+
+
+
+
+
+	<section>
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-lg-8 text-center">
+			
+						<div >
+							<div><br><br>
+								<h3>ABOUT NCATS N3C</h3><hr /><br>
+							</div>
+							<p>NCATS National COVID Cohort Collaborative (N3C):</p>
+							<p>
+								N3C aims to improve the efficiency and accessibility of
+								analyses with COVID-19 clinical data, expand ability to
+								analyze, and understand COVID, and demonstrate a novel
+								approach for collaborative pandemic data sharing
+							</p>
+						</div>
+						<div>
+							<p>
+								N3C Data Enclave is a central, harmonized data repository that
+								represents electronic health records from over 55 health
+								centers across the U.S.
+							</p><br><br>
+						</div>
+					<!-- Third -->
+				</div>
+				<!--
+				<div style="padding-left: 20px;" class="col-lg-6">
+
+					<img style="padding: 10px" class="img-fluid" src="img/covid_data.jpg"><br><br>
+				</div>-->
+
+			</div>
+
+<hr /><br><br>
+
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="footer-link">
+						<h5>Sponsored by <a href="https://www.medicalcountermeasures.gov/barda/" target="_blank">BARDA</a> in partnership with:</h5>
+						<div class="link">
+							<a href="https://ncats.nih.gov/" target="_blank">National Center for Advancing Translational Sciences</a>
+						</div><br>
+						<div class="link">
+							<a href="https://www.nichd.nih.gov/" target="_blank">Eunice Kennedy Shriver National Institute of Child and Human
+								Development</a>
+						</div><br>
+						<div class="link">
+							<a href="https://mchb.hrsa.gov/" target="_blank">Healthcare Resources and Services Administration - Maternal
+								and Child Health Bureau</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--
+	<div class="container">
+		<div class="row justify-content-center align-items-center text-center">
+			<div class="col-lg-2 col-md-12 img-margin">
+				<img class="img-fluid" src="img/seal_barda_Logo.png" />
+			</div>
+			<div class="col-lg-3 col-md-12 img-margin">
+				<img class="img-fluid" src="img/ncats-logo.png" />
+			</div>
+			<div class="col-lg-4 col-md-12 img-margin">
+				<img class="img-fluid" src="img/NIH2_Logo.png"/>
+			</div>
+			<div class="col-lg-4 col-md-12">
+				<img class="img-fluid" src="img/HRSA_Logo.png" />
+			</div>
+		</div>
+	</div>-->
+	<div class="footer" style="height: 120px"></div>
+
+	<script src="assets/js/jquery-3.3.1.min.js"></script>
+	<script src="assets/js/app.js"></script>
+
+
+			<!--   END: CONTENT -->
+
+			<!-- Footer -->
+			<div id="includefooter"></div>
+			<!-- Footer --------->
+
+			<!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+			<div id="scroll-top-link" class="scroll-top page-scroll visible-xs visible-sm">
+				<a class="btn btn-primary" href="#page-top"> <i class="fa fa-chevron-up"></i>
+				</a>
+			</div>
+
+			<script>
+				$(document).on("scroll", function () {
+					if ($(document).scrollTop() > 100) {
+						$(".navbar-fixed-top").addClass("navbar-shrink");
+						$(".navbar-brand").addClass("navbar-brand-shrink");
+					} else {
+						$(".navbar-fixed-top").removeClass("navbar-shrink");
+						$(".navbar-brand").removeClass("navbar-brand-shrink");
+					}
+				});
+			</script>
+
+</body>
+
+</html>
